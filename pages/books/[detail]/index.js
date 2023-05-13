@@ -39,7 +39,9 @@ const BookDetail = () => {
         <div className="w-11/12 sm:w-10/12 md:8/12 mx-auto">
           <h1 className="text-center font-extrabold font-title text-2xl">{detailBook.name}</h1>
           <Link href="/books">
-            <Image src="/icon-back02.png" alt="icon-back" width={20} height={20} className="cursor-pointer" />
+            <div className='cursor-pointer w-5 h-5 bg-cover bg center overflow-hidden relative'>
+            <Image src="/img/icon-back02.png" alt="icon-back" fill={true} />
+            </div>
           </Link>
           <table class="table-fixed mx-auto w-10/12 text-left mt-5">
             <tbody>

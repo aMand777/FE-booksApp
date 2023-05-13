@@ -21,9 +21,7 @@ const FilterBy = ({ title, className, ...rest }) => {
           id="filter"
           onChange={handleFilter}
           className={` cursor-pointer border-0 h-5 w-12 ml-1 font-semibold hover:border focus:border-blue-600 hover:border-green-100 border-black rounded-md text-xs italic appearance-none`}>
-          <option value="all" selected>
-            All Book
-          </option>
+          <option value="all">All Book</option>
           <option value="finish">Finished</option>
           <option value="unfinish">Unfinish</option>
           <option value="reading">Reading</option>
