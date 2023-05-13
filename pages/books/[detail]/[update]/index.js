@@ -24,7 +24,7 @@ const UpdateBook = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:9000/books/${update}`)
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/books/${update}`)
       .then((response) => {
         setFormData(response.data.data.book);
       })
@@ -51,7 +51,7 @@ const UpdateBook = () => {
       event.preventDefault();
     } else {
       axios
-        .put(`http://localhost:9000/books/${update}`, formData)
+        .put(`${process.env.NEXT_PUBLIC_API_URL}/books/${update}`, formData)
         .then((response) => {
           alert(response.data.message);
           console.log('response :', response);
@@ -140,7 +140,7 @@ const UpdateBook = () => {
                 </th>
                 <th className="bg-slate-100 w-3">:</th>
                 <td className="bg-slate-100">
-                  <input type="number" required name="year" id="year" placeholder="1990 . . ." onKeyDown={handleKeyPress} onChange={handleChange} value={formData.year} className="italic text-sm bg-slate-100 w-full outline-none" />
+                  <input type="number" required name="year" id="year" placeholder="1990 . . ." min='1990' onKeyDown={handleKeyPress} onChange={handleChange} value={formData.year} className="italic text-sm bg-slate-100 w-full outline-none" />
                 </td>
               </tr>
               <tr>

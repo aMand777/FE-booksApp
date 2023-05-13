@@ -13,7 +13,7 @@ const BookDetail = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:9000/books/${detail}`)
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/books/${detail}`)
       .then((response) => {
         setDetailBook(response.data.data.book);
       })
@@ -24,7 +24,7 @@ const BookDetail = () => {
     const confirmation = confirm(`Anda yakin akan menghapus buku ${detailBook.name} ?`);
     if (confirmation) {
       axios
-        .delete(`http://localhost:9000/books/${detail}`)
+        .delete(`${process.env.NEXT_PUBLIC_API_URL}/books/${detail}`)
         .then((response) => alert(response.data.message))
         .catch((err) => console.log(err));
       router.push('/books');

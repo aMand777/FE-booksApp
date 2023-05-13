@@ -34,12 +34,12 @@ const CreateBook = () => {
       event.preventDefault();
     } else {
       axios
-        .post(`http://localhost:9000/books`, books)
+        .post(`${process.env.NEXT_PUBLIC_API_URL}/books`, books)
         .then((response) => {
           setBooks(response.data.data.book);
           alert(response.data.message);
         })
-        .catch((err) => console.log(err));
+        .catch((err) => alert(err.message));
       router.push('/books');
     }
   };
@@ -121,7 +121,7 @@ const CreateBook = () => {
                 </th>
                 <th className="bg-slate-100 w-3">:</th>
                 <td className="bg-slate-100">
-                  <input type="number" name="year" id="year" placeholder="1990 . . ." required onKeyDown={handleKeyPress} value={books.year} onChange={handleChange} className="italic text-sm bg-slate-100 w-full outline-none" />
+                  <input type="number" name="year" id="year" placeholder="1990 . . ." min="1990" required onKeyDown={handleKeyPress} value={books.year} onChange={handleChange} className="italic text-sm bg-slate-100 w-full outline-none" />
                 </td>
               </tr>
               <tr>
