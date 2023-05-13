@@ -10,7 +10,7 @@ const Navbar = () => {
       </div>
       <div>
         <h className="text-white font-bold">
-          <Link href="/">BooksApp</Link>
+          <Link href="/books">BooksApp</Link>
         </h>
       </div>
       <div className="flex flex-row">

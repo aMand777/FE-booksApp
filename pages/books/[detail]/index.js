@@ -54,8 +54,8 @@ const BookDetail = () => {
                 <td className="bg-green-100 italic text-sm font-semibold">{detailBook.author}</td>
               </tr>
               <tr>
-                <th className="bg-slate-100">Summary</th>
-                <th className="bg-slate-100 w-3">:</th>
+                <th className="bg-slate-100 align-top">Summary</th>
+                <th className="bg-slate-100 w-3 align-top">:</th>
                 <td className="bg-slate-100 italic text-sm font-semibold">{detailBook.summary}</td>
               </tr>
               <tr>
@@ -84,9 +84,9 @@ const BookDetail = () => {
                 <td className="bg-green-100 italic text-sm font-semibold">{detailBook.finished === true ? 'Yes' : 'No'}</td>
               </tr>
               <tr>
-                <th className="bg-slate-100">UpdatedAt</th>
+                <th className="bg-slate-100">{detailBook.insertedAt === detailBook.updatedAt ? 'createdAt' : 'updatedAt'}</th>
                 <th className="bg-slate-100 w-3">:</th>
-                <td className="bg-slate-100 italic text-sm font-semibold">{detailBook.insertedAt === detailBook.updatedAt ? detailBook.insertedAt.substring(0, 10) : detailBook.updatedAt.substring(0, 10)}</td>
+                <td className="bg-slate-100 italic text-sm font-semibold">{detailBook.insertedAt === detailBook.updatedAt ? detailBook.insertedAt : detailBook.updatedAt}</td>
               </tr>
             </tbody>
           </table>

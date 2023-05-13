@@ -28,7 +28,7 @@ const UpdateBook = () => {
       .then((response) => {
         setFormData(response.data.data.book);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err.message));
   }, [update]);
 
   const handleChange = (event) => {
@@ -52,10 +52,15 @@ const UpdateBook = () => {
     } else {
       axios
         .put(`http://localhost:9000/books/${update}`, formData)
-        .then((response) => alert(response.data.message))
-        .catch((err) => console.log(err));
-      router.push(`/books/${update}`);
+        .then((response) => {
+          alert(response.data.message);
+          console.log('response :', response);
+        })
+        .catch((err) => {
+          console.log(err.message);
+        });
     }
+    router.push(`/books/${update}`);
   };
 
   const handleKeyPress = (event) => {
