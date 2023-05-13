@@ -95,7 +95,7 @@ const BookList = () => {
               <th className="bg-slate-300">Title</th>
               <th className="bg-slate-300">Publisher</th>
               <th className="bg-slate-300 flex justify-center pb-2">
-                <Image src="/icon-book02.png" alt="book-icon" width="25" height="20" />
+                <Image src="/img/icon-book02.png" alt="book-icon" width={25} height={20} />
               </th>
             </tr>
           </thead>
