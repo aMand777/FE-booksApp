@@ -77,7 +77,7 @@ const BookList = () => {
   return (
     <>
       <Head>
-        <title>Book Apps</title>
+        <title>BookApps | List</title>
       </Head>
       <div className="flex flex-row justify-center mt-10 items-center">
         <p className="text-sm italic">Selamat {greeting},</p>
@@ -100,8 +100,8 @@ const BookList = () => {
             </tr>
           </thead>
           <tbody>
-            {books.map((book, index) => (
-              <tr key={index} className="odd:bg-green-100 bg-slate-100">
+            {books.map((book) => (
+              <tr key={book.id} className="odd:bg-green-100 bg-slate-100">
                 <td className="italic font-thin font-title hidden sm:block">{count++ + '.'}</td>
                 <td className="italic font-semibold font-title">{book.name || ''}</td>
                 <td className="italic font-medium font-title">{book.publisher}</td>
